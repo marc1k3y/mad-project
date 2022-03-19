@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/mad-project/static/css/main.6393a20e.css",
-    "main.js": "/mad-project/static/js/main.dd35fa81.js",
+    "main.css": "/mad-project/static/css/main.093d2920.css",
+    "main.js": "/mad-project/static/js/main.ba30c2fe.js",
     "static/media/tg.svg": "/mad-project/static/media/tg.8c45a8e3d6eb06eaddec5e722dbbafde.svg",
     "index.html": "/mad-project/index.html",
-    "main.6393a20e.css.map": "/mad-project/static/css/main.6393a20e.css.map",
-    "main.dd35fa81.js.map": "/mad-project/static/js/main.dd35fa81.js.map"
+    "main.093d2920.css.map": "/mad-project/static/css/main.093d2920.css.map",
+    "main.ba30c2fe.js.map": "/mad-project/static/js/main.ba30c2fe.js.map"
   },
   "entrypoints": [
-    "static/css/main.6393a20e.css",
-    "static/js/main.dd35fa81.js"
+    "static/css/main.093d2920.css",
+    "static/js/main.ba30c2fe.js"
   ]
 }
