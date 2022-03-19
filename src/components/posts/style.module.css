@@ -1,0 +1,9 @@
+.postsWrapper {
+  margin-top: 20px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+}
