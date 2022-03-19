@@ -14,7 +14,18 @@
 }
 
 .logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.title {
   font-size: 28px;
   color: red;
   font-weight: bold;
+}
+
+.emoji {
+  font-size: 26px;
 }
