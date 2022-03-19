@@ -5,11 +5,11 @@ export const Header = () => {
   return (
     <div className={cn.headerWrapper}>
       <div className={cn.logo}>
-        <div className={cn.title}>
-          MAD
-        </div>
         <div className={cn.emoji}>
           👺
+        </div>
+        <div className={cn.title}>
+          MAD
         </div>
       </div>
       <div className={cn.burger}>
