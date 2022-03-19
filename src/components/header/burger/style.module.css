@@ -1,0 +1,38 @@
+.burger {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.topBun {
+  height: 10px;
+  background-color: #D98F41;
+  width: 25px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.cheese {
+  height: 2px;
+  width: 29px;
+  background-color: #F3B535;
+  border-radius: 5px;
+}
+
+.middle {
+  height: 4px;
+  width: 27px;
+  background-color: #7D3C11;
+  border-radius: 5px;
+}
+
+.botBun {
+  height: 6px;
+  width: 25px;
+  background-color: #D98F41;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}

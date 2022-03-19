@@ -1,3 +1,4 @@
+import { Burger } from "./burger"
 import cn from "./style.module.css"
 
 export const Header = () => {
@@ -7,7 +8,7 @@ export const Header = () => {
         MAD
       </div>
       <div className={cn.burger}>
-        brg
+        <Burger />
       </div>
     </div>
   )
