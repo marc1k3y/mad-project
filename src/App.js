@@ -2,7 +2,6 @@ import { useSelector } from "react-redux"
 import { Route, Routes } from "react-router-dom"
 import "./App.css"
 import { Header } from "./components/header"
-import { Tg } from "./components/tg"
 import { privateRoutes, publicRoutes } from "./routes"
 
 function App() {
@@ -25,7 +24,6 @@ function App() {
                 element={route.element} />)}
         </Routes>
       </div>
-      <Tg />
     </div>
   )
 }

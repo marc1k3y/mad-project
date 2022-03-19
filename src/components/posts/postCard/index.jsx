@@ -9,8 +9,8 @@ export const PostCard = ({ type, tag, content, desc, likes }) => {
       </div>
       <div className={cn.content}>
         {type === "img"
-          ? <img src={content} alt="img" width="180px" height="100px" />
-          : <Player url={content} width="180px" height="100px" />}
+          ? <img src={content} alt="img" width="100%" />
+          : <Player url={content} width="100%" height="auto" />}
       </div>
       <div className={cn.desc}>
         {desc}

@@ -1,6 +1,13 @@
 .postCardWrapper {
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .tag {

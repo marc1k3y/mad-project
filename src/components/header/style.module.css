@@ -29,3 +29,13 @@
 .emoji {
   font-size: 26px;
 }
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar img {
+  width: 30px;
+}
