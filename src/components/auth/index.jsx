@@ -17,13 +17,17 @@ export const Auth = () => {
       ? password === repPass &&
       reg(email, password)
         .then((data) => {
-          dispatch(successAction())
-          localStorage.setItem("token", data.token)
+          if (data.token) {
+            dispatch(successAction())
+            localStorage.setItem("token", data.token)
+          }
         })
       : login(email, password)
         .then((data) => {
-          dispatch(successAction())
-          localStorage.setItem("token", data.token)
+          if (data.token) {
+            dispatch(successAction())
+            localStorage.setItem("token", data.token)
+          }
         })
   }
 
