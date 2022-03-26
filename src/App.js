@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { Route, Routes } from "react-router-dom"
 import "./App.css"
 import { Header } from "./components/header"
+import { Loader } from "./components/UI/loader"
 import { check } from "./http/authApi"
 import { privateRoutes, publicRoutes } from "./routes"
 import { successAction } from "./store/auth/actions"
@@ -19,7 +20,7 @@ function App() {
       .finally(() => setLoading(false))
   }, [dispatch])
 
-  if (loading) return <h1>Loading..</h1>
+  if (loading) return <Loader />
 
   return (
     <div className="App">
