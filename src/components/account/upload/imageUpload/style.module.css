@@ -1,0 +1,17 @@
+.ImageUploadWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ImageUploadWrapper img {
+  width: 200px;
+}
+
+.ImageUploadWrapper label {
+  margin-top: 10px;
+}
+
+.ImageUploadWrapper input {
+  visibility: hidden;
+}

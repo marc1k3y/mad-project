@@ -2,8 +2,12 @@ import cn from "./style.module.css"
 import { MyButton } from "../UI/button"
 
 import avatar from "../../assets/tmp-avatar.svg"
+import { Modal } from "../UI/modal"
+import { Upload } from "./upload"
+import { useState } from "react"
 
 export const Account = () => {
+  const [uploadModal, setUploadModal] = useState(false)
   return (
     <div className={cn.accountWrapper}>
       <div className={cn.userInfo}>
@@ -17,8 +21,11 @@ export const Account = () => {
         </div>
       </div>
       <div className={cn.upload}>
-        <MyButton>upload post</MyButton>
+        <MyButton onClick={() => setUploadModal(true)}>upload post</MyButton>
       </div>
+      <Modal visible={uploadModal} close={setUploadModal}>
+        <Upload />
+      </Modal>
     </div>
   )
 }
