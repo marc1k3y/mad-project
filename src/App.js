@@ -18,7 +18,7 @@ function App() {
     check()
       .then(() => dispatch(successAction()))
       .finally(() => setLoading(false))
-  }, [dispatch])
+  }, [dispatch, isAuth])
 
   if (loading) return <Loader />
 

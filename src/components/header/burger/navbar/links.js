@@ -1,5 +1,9 @@
-export const links = [
+export const publicLinks = [
   { to: "/", title: "Feed" },
-  { to: "/account", title: "Account" },
   { to: "/auth", title: "Auth" }
+]
+
+export const privateLinks = [
+  { to: "/", title: "Feed" },
+  { to: "/account", title: "Account" }
 ]
