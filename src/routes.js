@@ -1,3 +1,4 @@
+import { Auth } from "./components/auth"
 import { Posts } from "./components/posts"
 
 export const privateRoutes = [
@@ -5,5 +6,6 @@ export const privateRoutes = [
 ]
 
 export const publicRoutes = [
-  { path: "*", element: <Posts /> }
+  { path: "*", element: <Posts /> },
+  { path: "/auth", element: <Auth /> }
 ]

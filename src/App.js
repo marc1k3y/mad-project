@@ -1,11 +1,26 @@
-import { useSelector } from "react-redux"
+import { useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import { Route, Routes } from "react-router-dom"
 import "./App.css"
 import { Header } from "./components/header"
+import { check } from "./http/authApi"
 import { privateRoutes, publicRoutes } from "./routes"
+import { successAction } from "./store/auth/actions"
 
 function App() {
+  const dispatch = useDispatch()
   const { isAuth } = useSelector(state => state.auth)
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    setLoading(true)
+    check()
+      .then(() => dispatch(successAction()))
+      .finally(() => setLoading(false))
+  }, [dispatch])
+
+  if (loading) return <h1>Loading..</h1>
+
   return (
     <div className="App">
       <Header />
