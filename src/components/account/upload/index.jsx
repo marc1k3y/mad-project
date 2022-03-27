@@ -3,11 +3,30 @@ import { useState } from "react"
 import { MyButton } from "../../UI/button"
 import { MyInput } from "../../UI/input"
 import { ImageUpload } from "./imageUpload"
+import { createPost } from "../../../http/postApi"
 
-export const Upload = () => {
+export const Upload = ({ close }) => {
   const [type, setType] = useState(true)
   const [tag, setTag] = useState("lol")
+  const [content, setContent] = useState(undefined)
   const [desc, setDesc] = useState("")
+  const [sended, setSended] = useState(false)
+
+  function sendPost() {
+    if (content) {
+      const formData = new FormData()
+      formData.append("contentType", type ? "img" : "video")
+      formData.append("tag", tag)
+      formData.append("content", content)
+      formData.append("desc", desc)
+      createPost(formData)
+        .then(() => {
+          close(false)
+          setDesc("")
+          setSended(true)
+        })
+    }
+  }
 
   return (
     <div className={cn.uploadWrapper}>
@@ -22,11 +41,11 @@ export const Upload = () => {
           <option value="fapfap">fapfap</option>
         </select>
       </div>
-      <ImageUpload />
+      <ImageUpload setContent={setContent} sended={sended} />
       <div className={cn.desc}>
         <MyInput type="text" value={desc} onChange={(e) => setDesc(e.target.value)} />
       </div>
-      <MyButton>Post</MyButton>
+      <MyButton onClick={sendPost}>Post</MyButton>
     </div>
   )
 }

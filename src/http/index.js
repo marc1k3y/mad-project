@@ -8,6 +8,11 @@ const $authHost = axios.create({
     baseURL: process.env.REACT_APP_API_URL
 })
 
+const $fileHost = axios.create({
+    baseURL: process.env.REACT_APP_API_URL,
+    headers: { "Content-Type": "multipart/form-data" }
+})
+
 const authInterceptor = (config) => {
     config.headers.authorization = `Bearer ${localStorage.getItem("token")}`
     return config
@@ -15,4 +20,4 @@ const authInterceptor = (config) => {
 
 $authHost.interceptors.request.use(authInterceptor)
 
-export { $host, $authHost }
+export { $host, $authHost, $fileHost }

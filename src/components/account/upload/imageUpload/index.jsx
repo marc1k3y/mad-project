@@ -1,7 +1,7 @@
 import cn from "./style.module.css"
 import { useEffect, useState } from "react"
 
-export const ImageUpload = () => {
+export const ImageUpload = ({ setContent, sended }) => {
   const [selectedFile, setSelectedFile] = useState()
   const [preview, setPreview] = useState()
 
@@ -14,6 +14,14 @@ export const ImageUpload = () => {
     setPreview(objectUrl)
     return () => URL.revokeObjectURL(objectUrl)
   }, [selectedFile])
+
+  useEffect(() => {
+    setContent(selectedFile)
+  }, [selectedFile, setContent])
+
+  useEffect(() => {
+    sended && setSelectedFile(undefined)
+  }, [sended])
 
   const onSelectFile = e => {
     if (!e.target.files || e.target.files.length === 0) {
@@ -28,7 +36,7 @@ export const ImageUpload = () => {
       {selectedFile && <button className={cn.deleteFile} onClick={() => setSelectedFile(undefined)}>X</button>}
       {selectedFile && <img src={preview} alt="post-pic" />}
       {!selectedFile && <label htmlFor="post-image">+</label>}
-      <input id="post-image" type='file' onChange={onSelectFile} />
+      <input name="content" id="post-image" type='file' onChange={onSelectFile} />
     </div>
   )
 }

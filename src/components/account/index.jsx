@@ -24,7 +24,7 @@ export const Account = () => {
         <MyButton onClick={() => setUploadModal(true)}>upload post</MyButton>
       </div>
       <Modal visible={uploadModal} close={setUploadModal}>
-        <Upload />
+        <Upload close={setUploadModal} />
       </Modal>
     </div>
   )
