@@ -6,15 +6,28 @@
   gap: 10px;
 }
 
-.image {
+.contentType {
   display: flex;
-  flex-direction: column;
+  font-weight: bold;
 }
 
-.image input {
-  visibility: hidden;
+.contentType>div:first-child {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 5px 10px;
+  border: 2px solid red;
 }
 
-.image img {
-  width: 200px;
+.contentType>div:last-child {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 5px 10px;
+  border: 2px solid red;
+}
+
+select {
+  padding: 5px;
+  border: 2px solid gray;
+  border-radius: 10px;
+  background-color: transparent;
 }

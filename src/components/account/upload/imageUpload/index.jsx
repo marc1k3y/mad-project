@@ -24,9 +24,10 @@ export const ImageUpload = () => {
   }
 
   return (
-    <div className={cn.ImageUploadWrapper}>
+    <div className={cn.ImageUploadWrapper} style={{ border: !selectedFile && "5px solid gray", borderRadius: !selectedFile && "25px" }}>
+      {selectedFile && <button className={cn.deleteFile} onClick={() => setSelectedFile(undefined)}>X</button>}
       {selectedFile && <img src={preview} alt="post-pic" />}
-      <label htmlFor="post-image">+</label>
+      {!selectedFile && <label htmlFor="post-image">+</label>}
       <input id="post-image" type='file' onChange={onSelectFile} />
     </div>
   )
