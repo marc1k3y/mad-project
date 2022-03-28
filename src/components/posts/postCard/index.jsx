@@ -1,16 +1,15 @@
 import cn from "./style.module.css"
-import Player from "react-player"
 
-export const PostCard = ({ type, tag, content, desc, likes }) => {
+export const PostCard = ({ type, tag, content, desc, tgLink, likes }) => {
   return (
-    <div className={cn.postCardWrapper}>
+    <div className={cn.postCardWrapper} onClick={() => window.location.href = tgLink}>
       <div className={cn.tag}>
         {`#${tag}`}
       </div>
       <div className={cn.content}>
         {type === "img"
           ? <img src={content} alt="img" width="100%" />
-          : <Player url={content} width="100%" height="auto" />}
+          : <img src={content} alt="video" width="100%" />}
       </div>
       <div className={cn.desc}>
         {desc}
