@@ -2,21 +2,63 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  background-color: red;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px lightgray;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  color: white;
+}
+
+.createdAt {
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  color: red;
 }
 
 .content {
   display: flex;
   justify-content: center;
   width: 100%;
+  background-color: white;
 }
 
-.tag {
+.postImg {
+  position: relative;
+}
+
+.postImg>img {
+  width: 100%;
+}
+
+.playBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.playBtn>img {
+  width: 50px;
+}
+
+.desc {
   padding: 5px;
-  background-color: red;
-  color: white;
+  background-color: white;
 }
 
 .interactions {
   display: flex;
   justify-content: center;
+  padding: 5px;
 }
