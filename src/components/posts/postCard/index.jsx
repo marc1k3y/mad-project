@@ -1,11 +1,15 @@
 import cn from "./style.module.css"
 import play from "../../../assets/play.svg"
 
-export const PostCard = ({ createdAt, type, tag, content, desc, tgLink, likes }) => {
+export const PostCard = ({ id, createdAt, type, tag, content, desc, tgLink, likes }) => {
   function dateTimeFormat() {
     const date = createdAt.slice(5, 10)
     const time = createdAt.slice(11, 16)
     return `${date.replace("-", ".")} ${time}`
+  }
+
+  function like(userId, postId) {
+    // push postId to User.likedPosts
   }
   return (
     <div className={cn.postCardWrapper} onClick={() => window.location.href = tgLink}>

@@ -14,6 +14,7 @@ export const Posts = () => {
       {posts.map(post =>
         <PostCard
           key={post._id}
+          id={post._id}
           createdAt={post.createdAt}
           type={post.contentType}
           tag={post.tag}
