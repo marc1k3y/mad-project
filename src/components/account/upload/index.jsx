@@ -30,6 +30,7 @@ export const Upload = ({ close }) => {
 
   return (
     <div className={cn.uploadWrapper}>
+      <div className={cn.topCp}>
       <div className={cn.contentType}>
         <div onClick={() => setType(true)} style={{ backgroundColor: type && "red", color: type ? "white" : "red" }}>image</div>
         <div onClick={() => setType(false)} style={{ backgroundColor: !type && "red", color: !type ? "white" : "red" }}>video</div>
@@ -41,7 +42,9 @@ export const Upload = ({ close }) => {
           <option value="fapfap">fapfap</option>
         </select>
       </div>
-      <ImageUpload setContent={setContent} sended={sended} />
+      </div>
+      
+      <ImageUpload setContent={setContent} sended={sended} isVideo={!type} />
       <div className={cn.desc}>
         <MyInput type="text" value={desc} onChange={(e) => setDesc(e.target.value)} />
       </div>
