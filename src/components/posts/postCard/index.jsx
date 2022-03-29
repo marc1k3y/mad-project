@@ -1,18 +1,26 @@
 import cn from "./style.module.css"
 import play from "../../../assets/play.svg"
+import jwtDecode from "jwt-decode"
+import { likePost } from "../../../http/postApi"
+import { useState } from "react"
 
 export const PostCard = ({ id, createdAt, type, tag, content, desc, tgLink, likes }) => {
+  const [likesCount, setLikesCount] = useState(likes)
+  
   function dateTimeFormat() {
     const date = createdAt.slice(5, 10)
     const time = createdAt.slice(11, 16)
     return `${date.replace("-", ".")} ${time}`
   }
 
-  function like(userId, postId) {
-    // push postId to User.likedPosts
+  function like(postId) {
+    const email = jwtDecode(localStorage.getItem("token")).email
+    likePost(email, postId)
+      .then(() => setLikesCount(1 + likesCount))
   }
+
   return (
-    <div className={cn.postCardWrapper} onClick={() => window.location.href = tgLink}>
+    <div className={cn.postCardWrapper}>
       <div className={cn.header}>
         <div className={cn.tag}>
           {`#${tag}`}
@@ -21,7 +29,7 @@ export const PostCard = ({ id, createdAt, type, tag, content, desc, tgLink, like
           {dateTimeFormat()}
         </div>
       </div>
-      <div className={cn.content}>
+      <div className={cn.content} onClick={() => window.location.href = tgLink}>
         <div className={cn.postImg}>
           <img src={content} alt="img" />
           {type === "video" && <div className={cn.playBtn}>
@@ -33,7 +41,8 @@ export const PostCard = ({ id, createdAt, type, tag, content, desc, tgLink, like
         {desc}
       </div>
       <div className={cn.interactions}>
-        {likes}
+        {likesCount}
+        <button onClick={() => like(id)}>like</button>
       </div>
     </div>
   )

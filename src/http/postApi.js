@@ -1,4 +1,4 @@
-import { $host, $fileHost } from "./index"
+import { $host, $fileHost, $authHost } from "./index"
 
 export const createPost = async (formData) => {
   const { data } = await $fileHost.post(`api/post/create`, formData)
@@ -7,5 +7,12 @@ export const createPost = async (formData) => {
 
 export const getAll = async (limit, skip) => {
   const { data } = await $host.get(`api/post/getAll?limit=${limit}&skip=${skip}`)
+  return data
+}
+
+export const likePost = async (email, postId) => {
+  const { data } = await $authHost.post(`api/user/likePost`, {
+      email, postId
+  })
   return data
 }
