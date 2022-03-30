@@ -1,12 +1,12 @@
 import cn from "./style.module.css"
 import play from "../../../assets/play.svg"
-import jwtDecode from "jwt-decode"
 import { likePost } from "../../../http/postApi"
-import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
 
 export const PostCard = ({ id, createdAt, type, tag, content, desc, tgLink, likes }) => {
-  const [likesCount, setLikesCount] = useState(likes)
-  
+  const dispatch = useDispatch()
+  const { likedPosts, email } = useSelector(state => state.user)
+
   function dateTimeFormat() {
     const date = createdAt.slice(5, 10)
     const time = createdAt.slice(11, 16)
@@ -14,9 +14,7 @@ export const PostCard = ({ id, createdAt, type, tag, content, desc, tgLink, like
   }
 
   function like(postId) {
-    const email = jwtDecode(localStorage.getItem("token")).email
     likePost(email, postId)
-      .then(() => setLikesCount(1 + likesCount))
   }
 
   return (
@@ -41,7 +39,7 @@ export const PostCard = ({ id, createdAt, type, tag, content, desc, tgLink, like
         {desc}
       </div>
       <div className={cn.interactions}>
-        {likesCount}
+        {likes}
         <button onClick={() => like(id)}>like</button>
       </div>
     </div>

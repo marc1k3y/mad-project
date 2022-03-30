@@ -11,7 +11,7 @@ export const getAll = async (limit, skip) => {
 }
 
 export const likePost = async (email, postId) => {
-  const { data } = await $authHost.post(`api/user/likePost`, {
+  const { data } = await $authHost.post(`api/post/likePost`, {
       email, postId
   })
   return data

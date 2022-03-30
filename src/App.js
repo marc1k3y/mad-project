@@ -7,6 +7,8 @@ import { Loader } from "./components/UI/loader"
 import { check } from "./http/authApi"
 import { privateRoutes, publicRoutes } from "./routes"
 import { successAction } from "./store/auth/actions"
+import jwtDecode from "jwt-decode"
+import { setEmailAction } from "./store/user/actions"
 
 function App() {
   const dispatch = useDispatch()
@@ -16,7 +18,10 @@ function App() {
   useEffect(() => {
     setLoading(true)
     check()
-      .then(() => dispatch(successAction()))
+      .then(() => {
+        dispatch(successAction())
+        dispatch(setEmailAction(jwtDecode(localStorage.getItem("token")).email))
+      })
       .finally(() => setLoading(false))
   }, [dispatch, isAuth])
 
