@@ -1,14 +1,18 @@
 {
   "files": {
-    "main.css": "/mad-project/static/css/main.ee4cb348.css",
-    "main.js": "/mad-project/static/js/main.992752c4.js",
+    "main.css": "/mad-project/static/css/main.d4cada3e.css",
+    "main.js": "/mad-project/static/js/main.49186bae.js",
+    "static/media/tmp-avatar.svg": "/mad-project/static/media/tmp-avatar.1df5b8173fc7dd9aca24670017201958.svg",
     "static/media/tg.svg": "/mad-project/static/media/tg.b0acee6b4ce3a3253b7d70d8dd4970e5.svg",
+    "static/media/play.svg": "/mad-project/static/media/play.a1a5d574fc77ebf721381cb8b9421324.svg",
+    "static/media/close.svg": "/mad-project/static/media/close.4803133007bc0315841ec08ea6e98e2e.svg",
+    "static/media/loader.svg": "/mad-project/static/media/loader.d6fd6998206db47066cab5061816a5c8.svg",
     "index.html": "/mad-project/index.html",
-    "main.ee4cb348.css.map": "/mad-project/static/css/main.ee4cb348.css.map",
-    "main.992752c4.js.map": "/mad-project/static/js/main.992752c4.js.map"
+    "main.d4cada3e.css.map": "/mad-project/static/css/main.d4cada3e.css.map",
+    "main.49186bae.js.map": "/mad-project/static/js/main.49186bae.js.map"
   },
   "entrypoints": [
-    "static/css/main.ee4cb348.css",
-    "static/js/main.992752c4.js"
+    "static/css/main.d4cada3e.css",
+    "static/js/main.49186bae.js"
   ]
 }
