@@ -5,9 +5,12 @@ import avatar from "../../assets/tmp-avatar.svg"
 import { Modal } from "../UI/modal"
 import { Upload } from "./upload"
 import { useState } from "react"
+import { useSelector } from "react-redux"
 
 export const Account = () => {
+  const { role } = useSelector(state => state.user)
   const [uploadModal, setUploadModal] = useState(false)
+
   return (
     <div className={cn.accountWrapper}>
       <div className={cn.userInfo}>
@@ -20,9 +23,9 @@ export const Account = () => {
           </div>
         </div>
       </div>
-      <div className={cn.upload}>
+      {role === "Manager" && <div className={cn.upload}>
         <MyButton onClick={() => setUploadModal(true)}>upload post</MyButton>
-      </div>
+      </div>}
       <Modal visible={uploadModal} close={setUploadModal}>
         <Upload close={setUploadModal} />
       </Modal>

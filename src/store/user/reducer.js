@@ -1,14 +1,17 @@
-import { ADD_LIKE, RM_LIKE, SET_EMAIL, SET_LIKED_POSTS } from "./actions"
+import { ADD_LIKE, RM_LIKE, SET_USER_ID, SET_LIKED_POSTS, SET_ROLE } from "./actions"
 
 const defaultState = {
-  email: "",
+  role: "",
+  userId: "",
   likedPosts: []
 }
 
 export function UserReducer(state = defaultState, action) {
   switch (action.type) {
-    case SET_EMAIL:
-      return { ...state, email: action.payload }
+    case SET_ROLE:
+      return { ...state, role: action.payload }
+    case SET_USER_ID:
+      return { ...state, userId: action.payload }
     case SET_LIKED_POSTS:
       return { ...state, likedPosts: action.payload }
     case ADD_LIKE:

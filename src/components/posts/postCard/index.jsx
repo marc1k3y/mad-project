@@ -6,7 +6,7 @@ import { LikesBar } from "./likesBar"
 import { useState } from "react"
 
 export const PostCard = ({ id, createdAt, type, tag, content, desc, tgLink, likes }) => {
-  const { email, likedPosts } = useSelector(state => state.user)
+  const { userId, likedPosts } = useSelector(state => state.user)
   const [btnOff, setBtnOff] = useState(false)
 
   function dateTimeFormat() {
@@ -17,13 +17,13 @@ export const PostCard = ({ id, createdAt, type, tag, content, desc, tgLink, like
 
   function like(postId) {
     setBtnOff(true)
-    likePost(email, postId)
+    likePost(userId, postId)
       .finally(() => setBtnOff(false))
   }
 
   function dislike(postId) {
     setBtnOff(true)
-    dislikePost(email, postId)
+    dislikePost(userId, postId)
       .finally(() => setBtnOff(false))
   }
 

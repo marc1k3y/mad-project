@@ -10,16 +10,16 @@ export const getAll = async (limit, skip) => {
   return data
 }
 
-export const likePost = async (email, postId) => {
+export const likePost = async (userId, postId) => {
   const { data } = await $authHost.post(`api/post/likePost`, {
-      email, postId
+    userId, postId
   })
   return data
 }
 
-export const dislikePost = async (email, postId) => {
+export const dislikePost = async (userId, postId) => {
   const { data } = await $authHost.post(`api/post/dislikePost`, {
-      email, postId
+    userId, postId
   })
   return data
 }

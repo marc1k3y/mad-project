@@ -9,7 +9,7 @@ import { Loader } from "../UI/loader"
 
 export const Posts = () => {
   const dispatch = useDispatch()
-  const { email } = useSelector(state => state.user)
+  const { userId } = useSelector(state => state.user)
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(false)
 
@@ -19,10 +19,10 @@ export const Posts = () => {
 
   useEffect(() => {
     setLoading(true)
-    getLikedPosts(email)
+    getLikedPosts(userId)
       .then((data) => dispatch(setLikedPostsAction(data.likedPosts)))
       .finally(() => setLoading(false))
-  }, [dispatch, email])
+  }, [dispatch, userId])
 
   if (loading) return <Loader />
 
