@@ -1,11 +1,11 @@
 import cn from "./style.module.css"
 import play from "../../../assets/play.svg"
-import { likePost } from "../../../http/postApi"
-import { useDispatch, useSelector } from "react-redux"
+import { dislikePost, likePost } from "../../../http/postApi"
+import { useSelector } from "react-redux"
+import { LikesBar } from "./likesBar"
 
 export const PostCard = ({ id, createdAt, type, tag, content, desc, tgLink, likes }) => {
-  const dispatch = useDispatch()
-  const { likedPosts, email } = useSelector(state => state.user)
+  const { email, likedPosts } = useSelector(state => state.user)
 
   function dateTimeFormat() {
     const date = createdAt.slice(5, 10)
@@ -15,6 +15,10 @@ export const PostCard = ({ id, createdAt, type, tag, content, desc, tgLink, like
 
   function like(postId) {
     likePost(email, postId)
+  }
+
+  function dislike(postId) {
+    dislikePost(email, postId)
   }
 
   return (
@@ -39,8 +43,7 @@ export const PostCard = ({ id, createdAt, type, tag, content, desc, tgLink, like
         {desc}
       </div>
       <div className={cn.interactions}>
-        {likes}
-        <button onClick={() => like(id)}>like</button>
+        <LikesBar likes={likes} like={like} dislike={dislike} id={id} isLiked={likedPosts.find(postId => postId === id)} />
       </div>
     </div>
   )

@@ -16,3 +16,10 @@ export const likePost = async (email, postId) => {
   })
   return data
 }
+
+export const dislikePost = async (email, postId) => {
+  const { data } = await $authHost.post(`api/post/dislikePost`, {
+      email, postId
+  })
+  return data
+}
