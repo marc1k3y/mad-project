@@ -1,7 +1,7 @@
 import { useState } from "react"
 import cn from "./style.module.css"
 
-export const LikesBar = ({ likes, like, dislike, id, isLiked }) => {
+export const LikesBar = ({ likes, like, dislike, id, btnOff, isLiked }) => {
   const [liked, setLiked] = useState(isLiked)
   const [counter, setCounter] = useState(likes)
 
@@ -21,8 +21,8 @@ export const LikesBar = ({ likes, like, dislike, id, isLiked }) => {
     <div className={cn.likesBarWrapper}>
       <div className={cn.btn}>
         {liked
-          ? <button onClick={remove}>dislike</button>
-          : <button onClick={add}>like</button>}
+          ? <button disabled={btnOff} onClick={remove}>dislike</button>
+          : <button disabled={btnOff} onClick={add}>like</button>}
       </div>
       <div className={cn.counter}>
         {counter}

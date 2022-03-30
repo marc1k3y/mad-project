@@ -1,3 +1,27 @@
 .likesBarWrapper {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+.btn {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn>button {
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  color: white;
+}
+
+.counter {
+  margin-left: auto;
+  color: red;
+  font-weight: bold;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
 }
